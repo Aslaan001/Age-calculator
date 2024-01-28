@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        h1{
+            text-decoration: underline;
+            color:blueviolet
+        }
+
+        div{
+            margin-top:50px;
+            display:flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+       
+    </style>
+
+
+</head>
+<body>
+
+    <div>
+    <h1>Age Calculator</h1><br>
+</div>
+
+   <div>
+    <h2>Enter Your date of Birth :  -</h2>
+    <input type="Date" id="input"><button id="btn">Calculate</button>
+   </div>
+</body>
+
+<script>
+    const x=document.querySelector('#btn');
+
+    let year2,month2,day2;
+    
+    x.addEventListener('click',(e)=>{
+        e.preventDefault;
+        let y=document.querySelector('#input').value;
+        y=y+'1';
+        let year,month,day,year1,month1,day1;
+        
+        
+        year1=y.slice(0,4);
+        month1=y.slice(5,7);
+        day1=y.slice(8,10);
+       // console.log(year1,month1,day1);
+
+       
+
+
+
+
+      const d=new Date();
+      year=d.getFullYear();
+      month=d.getMonth()+1;
+      day=d.getDate();
+
+      year2=year-year1;
+      month2=Math.abs(month-month1);
+      day2=Math.abs(day-day1);
+
+      console.log(year2,month2,day2);
+      
+
+      const h=document.createElement("h2");
+      h.innerHTML=`Your Age is ${year2}</span> years ${month2} months ${day2} Days`;
+      h.style.color="Yellow";
+      h.style.display="block";
+      h.style.justifyContent="center";
+      h.style.textAlign="center";
+      document.body.appendChild(h);
+
+     
+
+    })
+    
+
+
+</script>
+
+
+
+
+
+
+</html>
